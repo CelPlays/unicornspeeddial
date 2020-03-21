@@ -70,7 +70,8 @@ class UnicornDialer extends StatefulWidget {
   final int animationDuration;
   final int mainAnimationDuration;
   final double childPadding;
-  final Color backgroundColor;
+  final Color backgroundColorStart;
+  final Color backgroundColorEnd;
   final Function onMainButtonPressed;
   final Object parentHeroTag;
   final bool hasNotch;
@@ -289,7 +290,7 @@ class _UnicornDialer extends State<UnicornDialer>
           child: GestureDetector(
               onTap: mainActionButtonOnPressed,
               child: Container(
-                color: widget.backgroundColor,
+                decoration: BoxDecoration(gradient:Gradient.linear(0,1,[backgroundColorStart, backgroundColorEnd])),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
               )));
